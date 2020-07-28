@@ -8,15 +8,12 @@ const human = function(myName, MyAge, MyNationality){
         age: MyAge,
         isVietnamese: MyNationality,
         speak: function() {
-            if (this.isVietnamese) {
-                return `Toi ten la ${this.name}`
-            } else {
-                return `My name is ${this.name}`
-            }
+            return `My name is ${this.name}`          
         }
     }
 }
 ~~~
+in example above. human.speak() is a method
 # this
 * a short way of my current object.
 * is only used inside the object.
