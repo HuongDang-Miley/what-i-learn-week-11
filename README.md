@@ -14,7 +14,7 @@ const human = function(myName, MyAge, MyNationality){
 }
 ~~~
 in example above. human.speak() is a method
-# this
+## this
 * a short way of my current object.
 * is only used inside the object.
 ~~~
@@ -33,9 +33,24 @@ const newPerson = function (name, age, single) {
         }
     }
 }
+
+~~~
+# Wednesday
+## Ray()
+* Use pascal case aka capital the first letter
+* A function create an object and has multiple methods in it
+* Any variable is assigned to a Ray will has all the key and method of that ray
+* Array is object with hidden key. In another word key is the index
+
+~~~
+const Ray = function (){
+    return {
+     length: 1
+    } 
+ 
+ }
+ const num = Ray()
+ num; //-> {length: 1}
 ~~~
 
 
-
-
-<font color=red>hello</font>
