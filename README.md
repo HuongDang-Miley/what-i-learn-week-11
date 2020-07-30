@@ -52,5 +52,50 @@ const Ray = function (){
  const num = Ray()
  num; //-> {length: 1}
 ~~~
+# Thursday
+## filter():
+* From the original array, return a new array, in which every new element passes the helper function.
+* Helper function MUST return a boolean.
 
+
+Eg: return a new array with only even number:
+~~~
+const nums = [1, 2, 3, 4, 5]
+~~~
+
+Helper function:
+~~~
+const isEven = function (num) {
+    return num % 2 === 0
+}
+~~~
+Manually: Use manualFilter function
+~~~
+const manualFilter = function (array, func) {
+    const newArr = []
+    for (const element of array) {
+        if (func(element) === true)
+        newArr.push(element)
+    }
+    return newArr
+}
+
+const onlyEven1 = manualFilter(nums, isEven)
+onlyEven1 //-> [2,4]
+~~~
+filter(): A built-in method for array, still require helper function, but don't need manualFilter function
+~~~
+const onlyEven2 = nums.filter(isEven)
+onlyEven2 //-> [2,4]
+~~~
+* Note: Way to use helper function return false.
+Eg: Return odd number only, use isEven()
+~~~
+const onlyOdd = nums.filter(function(num){
+    // return isEven(num) === false
+    // or
+    return !isEven(num)
+})
+onlyOdd; //-> [1,3,5]
+~~~
 
