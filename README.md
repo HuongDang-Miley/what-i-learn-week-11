@@ -131,3 +131,39 @@ wordLength1 //-> [5,2]
 ~~~
 const wordLength2 = words.map(length)
 wordLength2 //-> [5,2]
+~~~
+
+## forEach()
+* Do something to every element in an array (aka run a helper function on every element in that array)
+* DOES NOT return a new array aka. doesn't show anything.
+* Usage: write and read from file, print number on website, etc (not as use as often as map)
+
+** Eg: capitalize every word in an array. Do not return any new array
+
+~~~
+const words = ['hello', 'hi']
+~~~
+** Helper function: capitalize a string
+
+~~~
+const capitalize = function(str) {
+    console.log(str.toUpperCase())
+}
+~~~
+
+** Use manual way
+~~~
+const manualForEach = function (arr, func) {
+    for (const element of arr) {
+        func(element) //-> HELLO, HI
+    }
+}
+
+const printCap1 = manualForEach(words, capitalize)
+printCap1; // undefined because helper function does not return anything
+~~~
+** use forEach()
+~~~
+const printCap2 = words.forEach(capitalize)
+printCap2;  // undefined because helper function does not return anything
+~~~
