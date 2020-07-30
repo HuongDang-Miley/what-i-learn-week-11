@@ -56,20 +56,19 @@ const Ray = function (){
 ## filter():
 * From the original array, return a new array, in which every new element passes the helper function.
 * Helper function MUST return a boolean.
-
-
-** Eg: return a new array with only even number:
+<br/>
+Eg: return a new array with only even number:
 ~~~
 const nums = [1, 2, 3, 4, 5]
 ~~~
 
-** Helper function: check if a number is even
+Helper function: check if a number is even
 ~~~
 const isEven = function (num) {
     return num % 2 === 0
 }
 ~~~
-** Manually: Use manualFilter function
+Manually: Use manualFilter function
 ~~~
 const manualFilter = function (array, func) {
     const newArr = []
@@ -83,12 +82,12 @@ const manualFilter = function (array, func) {
 const onlyEven1 = manualFilter(nums, isEven)
 onlyEven1 //-> [2,4]
 ~~~
-** filter(): A built-in method for array, still require helper function, but don't need manualFilter function
+filter(): A built-in method for array, still require helper function, but don't need manualFilter function
 ~~~
 const onlyEven2 = nums.filter(isEven)
 onlyEven2 //-> [2,4]
 ~~~
-** Note: Way to use helper function return false.
+Note: Way to use helper function return false.
 Eg: Return odd number only, use isEven()
 ~~~
 const onlyOdd = nums.filter(function(num){
@@ -101,18 +100,18 @@ onlyOdd; //-> [1,3,5]
 
 ## map()
 * Create a new array from the original array. Every new element is transformed by a helper function
-
-** Eg: make a new array in which each element is the length of every word in words array
+<br/>
+Eg: make a new array in which each element is the length of every word in words array
 ~~~
 const words = ['hello', 'hi']
 ~~~
-** Helper function: A function transform ONLY one element in the array
+Helper function: A function transform ONLY one element in the array
 ~~~
 const length = function (str) {
     return str.length
 }
 ~~~
-** Solve us manual mapping
+Solve us manual mapping
 ~~~
 const manualMap = function (arr, func) {
     const newArr = []
@@ -127,7 +126,7 @@ const wordLength1 = manualMap(words, length)
 wordLength1 //-> [5,2]
 ~~~
 
-** solve use map() method
+Solve use map() method
 ~~~
 const wordLength2 = words.map(length)
 wordLength2 //-> [5,2]
@@ -137,13 +136,13 @@ wordLength2 //-> [5,2]
 * Do something to every element in an array (aka run a helper function on every element in that array)
 * DOES NOT return a new array aka. doesn't show anything.
 * Usage: write and read from file, print number on website, etc (not as use as often as map)
-
-** Eg: capitalize every word in an array. Do not return any new array
+<br/>
+Eg: capitalize every word in an array. Do not return any new array
 
 ~~~
 const words = ['hello', 'hi']
 ~~~
-** Helper function: capitalize a string
+Helper function: capitalize a string
 
 ~~~
 const capitalize = function(str) {
@@ -151,7 +150,7 @@ const capitalize = function(str) {
 }
 ~~~
 
-** Use manual way
+Use manual way
 ~~~
 const manualForEach = function (arr, func) {
     for (const element of arr) {
@@ -162,7 +161,7 @@ const manualForEach = function (arr, func) {
 const printCap1 = manualForEach(words, capitalize)
 printCap1; // undefined because helper function does not return anything
 ~~~
-** use forEach()
+Use forEach()
 ~~~
 const printCap2 = words.forEach(capitalize)
 printCap2;  // undefined because helper function does not return anything
