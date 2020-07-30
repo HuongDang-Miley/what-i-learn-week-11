@@ -58,18 +58,18 @@ const Ray = function (){
 * Helper function MUST return a boolean.
 
 
-Eg: return a new array with only even number:
+** Eg: return a new array with only even number:
 ~~~
 const nums = [1, 2, 3, 4, 5]
 ~~~
 
-Helper function:
+** Helper function: check if a number is even
 ~~~
 const isEven = function (num) {
     return num % 2 === 0
 }
 ~~~
-Manually: Use manualFilter function
+** Manually: Use manualFilter function
 ~~~
 const manualFilter = function (array, func) {
     const newArr = []
@@ -83,12 +83,12 @@ const manualFilter = function (array, func) {
 const onlyEven1 = manualFilter(nums, isEven)
 onlyEven1 //-> [2,4]
 ~~~
-filter(): A built-in method for array, still require helper function, but don't need manualFilter function
+** filter(): A built-in method for array, still require helper function, but don't need manualFilter function
 ~~~
 const onlyEven2 = nums.filter(isEven)
 onlyEven2 //-> [2,4]
 ~~~
-* Note: Way to use helper function return false.
+** Note: Way to use helper function return false.
 Eg: Return odd number only, use isEven()
 ~~~
 const onlyOdd = nums.filter(function(num){
@@ -99,3 +99,35 @@ const onlyOdd = nums.filter(function(num){
 onlyOdd; //-> [1,3,5]
 ~~~
 
+## map()
+* Create a new array from the original array. Every new element is transformed by a helper function
+
+** Eg: make a new array in which each element is the length of every word in words array
+~~~
+const words = ['hello', 'hi']
+~~~
+** Helper function: A function transform ONLY one element in the array
+~~~
+const length = function (str) {
+    return str.length
+}
+~~~
+** Solve us manual mapping
+~~~
+const manualMap = function (arr, func) {
+    const newArr = []
+    for (const element of arr) {
+        const transformedElement = func(element)
+        newArr.push(transformedElement)
+    }
+    return newArr
+}
+
+const wordLength1 = manualMap(words, length)
+wordLength1 //-> [5,2]
+~~~
+
+** solve use map() method
+~~~
+const wordLength2 = words.map(length)
+wordLength2 //-> [5,2]
